@@ -1,0 +1,15 @@
+server:
+  port: 9000
+keycloak:
+  realm: vakantieplanner
+
+  # Below config is supplied at runtime (prod) or injected during integration test (test)
+  # auth-server-url: http://${KEYCLOAK_HOST:localhost}:${KEYCLOAK_PORT}
+  resource: spring-app
+
+  # you can either see realm roles or client roles and not both.. this is unfortunate but thats how it is.. :(
+  # you can set keycloak.use-resource-role-mappings = false to start using realm roles.
+  # see: https://github.com/keycloak/keycloak/discussions/12637#discussioncomment-2995485
+  #
+  use-resource-role-mappings: false
+  bearer-only: true

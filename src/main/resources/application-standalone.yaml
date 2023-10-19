@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:54410/standalone-db?loggerLevel=OFF'
+    username: 'admin'
+    password: 'admin'
+keycloak:
+  auth-server-url: 'http://localhost:54439/'
+  realm: vakantieplanner
+  resource: spring-app
+  use-resource-role-mappings: false
+  bearer-only: true
+
+
